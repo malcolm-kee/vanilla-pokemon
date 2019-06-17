@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vanilla Pokemon App</title>
+    <link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="appbar">
+        <div>
+          <h1>Vanilla Pokemon App</h1>
+          <p>Vanilla JavaScript without frontend frameworks.</p>
+        </div>
+        <div class="github-link">
+          <i class="nes-octocat animate"></i>
+        </div>
+      </header>
+      <main id="app">
+        <div id="pokemon-container"></div>
+        <div class="nes-container toolbar">
+          <button class="nes-btn is-primary" type="button" id="load-pokemon-btn" disabled>
+            Load More
+          </button>
+          <p class="loading-text nes-balloon from-left">Loading...</p>
+        </div>
+      </main>
+    </div>
+    <template id="pokemon-record">
+      <section class="nes-container with-title is-centered">
+        <h3 class="pokemon-name title"></h3>
+        <img class="pokemon-thumbnail" />
+      </section>
+    </template>
+    <script src="/script.js"></script>
+  </body>
+</html>
