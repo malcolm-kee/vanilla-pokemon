@@ -35,8 +35,15 @@ body {
   padding: 8px 0;
 }
 
-.pokemon-card {
+.pokemon {
+  position: relative;
   text-align: center;
+}
+
+.pokemon .fav-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 .pokemon-thumbnail {
