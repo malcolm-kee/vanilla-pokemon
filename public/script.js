@@ -39,6 +39,10 @@
     $el && $el.classList.toggle(className);
   }
 
+  function removeClass($el, className) {
+    $el && $el.classList.remove(className);
+  }
+
   var $loadPokemonBtn = $('#load-pokemon-btn');
   var $pokemonContainer = $('#pokemon-container');
 
@@ -46,8 +50,8 @@
     var currentPage = 1;
 
     return function getPokemonsCall(options) {
-      const limit = options.limit || 15;
-      const onSuccess = options.onSuccess || noop;
+      var limit = options.limit || 15;
+      var onSuccess = options.onSuccess || noop;
 
       ajax(
         'https://pokemon-json.herokuapp.com/api/pokemons?_page=' + currentPage + '&_limit=' + limit,
@@ -72,16 +76,15 @@
     var $pokemon = $el.querySelector('.pokemon');
 
     $pokemon.dataset.pokemonId = pokemon.id;
-    $pokemon.dataset.name = pokemon.name;
 
     return $el;
   }
 
   function render(pokemons) {
-    const $target = $('#pokemon-container');
+    var $target = $('#pokemon-container');
 
     pokemons.forEach(function(pokemon) {
-      const $pokemon = createPokemonEl(pokemon);
+      var $pokemon = createPokemonEl(pokemon);
       $target.appendChild($pokemon);
     });
 
@@ -161,4 +164,12 @@
   $loadPokemonBtn.addEventListener('click', loadPokemons);
   $pokemonContainer.addEventListener('click', onPokemonClick);
   $('#pokemon-dialog .cancel-btn').addEventListener('click', unFocusPokemon);
+  $('#like-all-btn').addEventListener('click', function likeAllPokemons() {
+    var allFavIcons = document.querySelectorAll('.pokemon .fav-icon');
+
+    for (var index = 0; index < allFavIcons.length; index++) {
+      var favIcon = allFavIcons[index];
+      removeClass(favIcon, 'is-empty');
+    }
+  });
 })();
