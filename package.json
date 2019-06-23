@@ -1,0 +1,26 @@
+{
+  "name": "vanilla-pokemon-app",
+  "version": "1.0.0",
+  "description": "An application showing pokemon without any frameworks.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malcolm-kee/vanilla-pokemon.git"
+  },
+  "keywords": [
+    "pokemon",
+    "vanilla javascript"
+  ],
+  "author": {
+    "name": "Malcolm Kee",
+    "email": "malcolm.keeweesiong@gmail.com",
+    "url": "https://malcolmkee.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malcolm-kee/vanilla-pokemon/issues"
+  },
+  "homepage": "https://vanilla-pokemon.netlify.com/"
+}
