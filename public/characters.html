@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vanilla Pokemon App</title>
+    <link rel="icon" type="image/png" sizes="20x20" href="/icon.png" />
+    <link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container appbar">
+        <div>
+          <h1>
+            <a href="/">Vanilla Pokemon App</a>
+          </h1>
+          <p>Vanilla JavaScript without frontend frameworks.</p>
+        </div>
+        <div class="github-link">
+          <a
+            href="https://github.com/malcolm-kee/vanilla-pokemon"
+            target="_BLANK"
+            rel="nofollow noopener"
+          >
+            <i class="nes-octocat animate"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main id="app">
+      <div class="container">
+        <div class="two-columns">
+          <div id="character-container">
+            <p class="loading-text is-shown nes-balloon from-left">Loading...</p>
+          </div>
+          <div class="character-form-container">
+            <form id="character-form">
+              <div class="nes-container with-title is-rounded">
+                <h3 class="title">Create Character</h3>
+                <input type="hidden" name="id" id="characterId" />
+                <div class="nes-field">
+                  <label for="characterName">Name</label>
+                  <input name="name" id="characterName" class="nes-input" required />
+                </div>
+                <div class="nes-field">
+                  <label for="characterImage">Image URL</label>
+                  <input name="image" id="characterImage" type="url" class="nes-input" required />
+                </div>
+                <div class="toolbar">
+                  <button type="submit" class="nes-btn is-success">Create</button>
+                  <button type="reset" class="nes-btn">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="nes-container toolbar">
+          <a href="/" class="nes-btn is-warning">
+            Pokemons
+          </a>
+        </div>
+      </div>
+    </main>
+    <template id="character-record">
+      <section class="character nes-container with-title is-centered">
+        <h3 class="character-name title"></h3>
+        <img class="character-image" />
+      </section>
+    </template>
+    <script src="/polyfill.js"></script>
+    <script src="/utils.js"></script>
+    <script src="/characters.js"></script>
+  </body>
+</html>

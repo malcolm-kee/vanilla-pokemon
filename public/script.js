@@ -1,47 +1,11 @@
-(function app() {
+(function app(helpers) {
   'use strict';
 
-  function noop() {}
-
-  function ajax(url, options) {
-    var opts = options || {};
-    var onSuccess = opts.onSuccess || noop;
-    var onError = opts.onError || noop;
-    var dataType = opts.dataType || 'json';
-    var method = opts.method || 'GET';
-
-    var request = new XMLHttpRequest();
-    request.open(method, url);
-    if (dataType === 'json') {
-      request.overrideMimeType('application/json');
-      request.responseType = 'json';
-      request.setRequestHeader('Accept', 'application/json');
-    }
-
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        onSuccess(request.response);
-      } else {
-        onError(request.response);
-      }
-    };
-
-    request.onerror = onError;
-
-    request.send(opts.body);
-  }
-
-  function $(selector) {
-    return document.querySelector(selector);
-  }
-
-  function toggleClass($el, className) {
-    $el && $el.classList.toggle(className);
-  }
-
-  function removeClass($el, className) {
-    $el && $el.classList.remove(className);
-  }
+  var noop = helpers.noop;
+  var ajax = helpers.ajax;
+  var $ = helpers.$;
+  var toggleClass = helpers.toggleClass;
+  var removeClass = helpers.removeClass;
 
   var $loadPokemonBtn = $('#load-pokemon-btn');
   var $pokemonContainer = $('#pokemon-container');
@@ -73,9 +37,7 @@
     $el.querySelector('.pokemon-name').textContent = `#${pokemon.id} ${pokemon.name}`;
     $el.querySelector('.pokemon-thumbnail').setAttribute('src', pokemon.thumbnail);
 
-    var $pokemon = $el.querySelector('.pokemon');
-
-    $pokemon.dataset.pokemonId = pokemon.id;
+    $el.querySelector('.pokemon').dataset.pokemonId = pokemon.id;
 
     return $el;
   }
@@ -172,4 +134,4 @@
       removeClass(favIcon, 'is-empty');
     }
   });
-})();
+})(utils);

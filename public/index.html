@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="appbar">
+    <header>
+      <div class="container appbar">
         <div>
           <h1>
             <a href="/">Vanilla Pokemon App</a>
@@ -27,10 +27,15 @@
             <i class="nes-octocat animate"></i>
           </a>
         </div>
-      </header>
-      <main id="app">
+      </div>
+    </header>
+    <main id="app">
+      <div class="container">
         <div id="pokemon-container"></div>
         <div class="nes-container toolbar">
+          <a href="/characters" class="nes-btn is-warning">
+            Characters
+          </a>
           <button id="like-all-btn" class="nes-btn">
             Like All ❤️
           </button>
@@ -39,8 +44,8 @@
           </button>
           <p class="loading-text nes-balloon from-left">Loading...</p>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
     <template id="pokemon-record">
       <section class="pokemon nes-container with-title is-centered">
         <i class="fav-icon nes-icon is-medium heart is-empty"></i>
@@ -105,12 +110,13 @@
             <p class="loading-text nes-balloon from-right">Loading...</p>
           </div>
           <menu class="dialog-menu">
-            <button class="nes-btn cancel-btn">Cancel</button>
+            <button type="button" class="nes-btn cancel-btn">Cancel</button>
           </menu>
         </form>
       </div>
     </div>
     <script src="/polyfill.js"></script>
+    <script src="/utils.js"></script>
     <script src="/script.js"></script>
   </body>
 </html>

@@ -14,7 +14,6 @@ body {
 .appbar {
   display: flex;
   justify-content: space-between;
-  padding: 0 8px;
 }
 
 .appbar a {
@@ -121,4 +120,24 @@ body {
 
 .dialog-menu {
   margin: 0.5em 0;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: auto 270px;
+  grid-gap: 8px;
+  padding: 8px 0;
+}
+
+#character-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 8px;
+  justify-items: center;
+}
+
+.character-image {
+  display: inline-block;
+  max-width: 120px;
+  max-height: 120px;
 }
