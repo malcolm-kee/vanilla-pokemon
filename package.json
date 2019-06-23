@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An application showing pokemon without any frameworks.",
   "scripts": {
+    "start": "node start-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/malcolm-kee/vanilla-pokemon/issues"
   },
-  "homepage": "https://vanilla-pokemon.netlify.com/"
+  "homepage": "https://vanilla-pokemon.netlify.com/",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
 }
