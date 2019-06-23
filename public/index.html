@@ -45,6 +45,68 @@
         <img class="pokemon-thumbnail" />
       </section>
     </template>
+    <template id="pokemon-details">
+      <section class="pokemon-details-container">
+        <div>
+          <p class="pokemon-names"></p>
+          <img class="pokemon-image" />
+          <p class="pokemon-types"></p>
+        </div>
+        <div>
+          <div class="nes-container with-title">
+            <h3 class="title">Base</h3>
+            <table class="nes-table">
+              <thead>
+                <tr>
+                  <th>Attribute</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>HP</td>
+                  <td class="pokemon-hp"></td>
+                </tr>
+                <tr>
+                  <td>Attack</td>
+                  <td class="pokemon-atk"></td>
+                </tr>
+                <tr>
+                  <td>Defense</td>
+                  <td class="pokemon-def"></td>
+                </tr>
+                <tr>
+                  <td>Sp. Attack</td>
+                  <td class="pokemon-sp-atk"></td>
+                </tr>
+                <tr>
+                  <td>Sp. Defense</td>
+                  <td class="pokemon-sp-def"></td>
+                </tr>
+                <tr>
+                  <td>Speed</td>
+                  <td class="pokemon-speed"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </template>
+    <div class="modal" id="pokemon-dialog">
+      <div class="nes-dialog is-rounded modal-content">
+        <form method="dialog">
+          <p class="title"></p>
+          <div class="dialog-content">
+            <div class="pokemon-details"></div>
+            <p class="loading-text nes-balloon from-right">Loading...</p>
+          </div>
+          <menu class="dialog-menu">
+            <button class="nes-btn cancel-btn">Cancel</button>
+          </menu>
+        </form>
+      </div>
+    </div>
     <script src="/polyfill.js"></script>
     <script src="/script.js"></script>
   </body>
